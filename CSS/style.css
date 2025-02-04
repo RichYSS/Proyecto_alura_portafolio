@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* En css el color va de A - F y del 0 al 9 donde F es mas fuerte y 9, empieza con RGB donde R es red, G es green y B es blue
+    ejemplo #FF0000 indica que es un rojo, #00FF00 indica que es un verde, #0000FF indica azul  #272727
+    1em = 30px; 0.5em = 15px
+    Nota: la medida em cuando se implementa en una etiqueta dentro de un selector padre, esta toma 
+    su medida mas la del selector padre, es decir tenemos un div <div class="div1"><div class="div2"><p></p></div></div>
+    donde div2 tiene 2em que es igual a 30px, si el parrafo tiene 2em no serian 30px, seria 30 mas los 30 del div2.
+
+    En el rem no tenemos esos problemas ya que siempre rem su tamaño sera a 16px 1rem = 16px, 3rem = 48px
+
+    ctrl + F = buscar
+    */
+
+
+:root {
+    --color-primario: #f6f6f6;
+    --color-secundario: #141037;
+    --color-terciario: #22d4fd;
+    --color-hover: #5a1ea9;
+    --fuente-uno-montse: "Montserrat", serif;
+    --fuente-dos-krona: "Krona One", serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: var(--color-primario);
+    background-color: var(--color-secundario);
+    box-sizing: border-box;
+}
+
+.header {
+    padding: 2% 0% 0% 15%;
+}
+
+.header__menu {
+    display: flex;
+    gap: 80px;
+}
+
+.header__menu__link {
+    font-family: var(--fuente-uno-montse);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-terciario);
+    text-decoration: none;
+}
+
+.header__menu__link:hover {
+    color: var(--color-hover);
+}
+
+.presentacion {
+    padding: 5% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.presentacion__contenido {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.presentacion__contenido__titulo {
+    font-family: var(--fuente-dos-krona);
+    font-size: 2.25rem;
+}
+
+.titulo-destaque {
+    color: var(--color-terciario);
+}
+
+.presentacion__contenido__texto {
+    font-family: var(--fuente-uno-montse);
+    font-size: 1.5rem;
+}
+
+.presentacion__enlaces {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.presentacion__enlaces__subtitulo {
+    font-family: var(--fuente-dos-krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.presentacion__enlaces__link {
+    width: 50%;
+    text-align: center;
+    padding: 21.5px 0;
+    border-radius: 8px;
+    font-family: var(--fuente-uno-montse);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color-primario);
+    border: 2px solid var(--color-terciario);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.presentacion__enlaces__link:hover {
+    background-color: var(--color-hover);
+}
+
+.presentacion__imagen {
+    width: 50%;
+}
+
+.footer {
+    background-color: var(--color-terciario);
+    padding: 24px;
+    color: var(--color-secundario);
+    text-align: center;
+    font-family: var(--fuente-uno-montse);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+/* Media queries */
+
+@media (max-width: 1200px) {
+    .header {
+        padding: 10%;
+    }
+
+    .header__menu {
+        justify-content: center;
+    }
+
+    .presentacion {
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .presentacion__contenido {
+        width: 100%;
+    }
+
+    .presentacion__enlaces {
+        width: 100%;
+    }
+
+    .presentacion__enlaces__link {
+        width: 100%;
+    }
+
+    .presentacion__imagen {
+        width: 80%;
+    }
+    
+}
